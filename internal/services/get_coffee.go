@@ -31,7 +31,7 @@ func IndexHandler(w http.ResponseWriter, r *http.Request) {
 			{BrewMethod: "Espresso", BrewTime: "00:40", CoffeeIn: 15.6, CoffeeOut: 30},
 		},
 	}
-	tmpl := template.Must(template.ParseFiles("web/static/index.html"))
+	tmpl := template.Must(template.ParseFiles("web/index.html"))
 	tmpl.Execute(w, brews)
 }
 
@@ -42,7 +42,7 @@ func NewBrew(w http.ResponseWriter, r *http.Request) {
 
 	coffeeOut, _ := strconv.ParseFloat(r.PostFormValue("coffeeOut"), 32)
 
-	tmpl := template.Must(template.ParseFiles(("web/templates/fragments/new_brew.gohtml")))
+	tmpl := template.Must(template.ParseFiles(("web/fragments/new_brew.gohtml")))
 	tmpl.Execute(w, Brew{
 		BrewMethod: brewMethod,
 		BrewTime:   brewTime,
