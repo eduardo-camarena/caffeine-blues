@@ -7,19 +7,17 @@
     <link href="/static/style.css" rel="stylesheet">
     <script src="https://unpkg.com/htmx.org@1.9.6" integrity="sha384-FhXw7b6AlE/jyjlZH5iHa/tTe9EpJ1Y55RjcgPbjeWMskSxZt1v9qkxLJWNJaGni" crossorigin="anonymous"></script>
   </head>
-  <body>
-    <h1>Hello world</h1>
-    {{ range .Brews }}
-      <p>{{ .CoffeeIn }} - {{ .CoffeeOut }}</p>
-    {{ end }}
-
-    <form hx-post="/brews/new" hx-swap="beforebegin">
-      <input type="text" name="brewMethod" id="brewMethod">
-      <input type="text" name="brewTime" id="brewTime">
-      <input type="text" name="coffeeIn" id="coffeeIn">
-      <input type="text" name="coffeeOut" id="coffeeOut">
-
-      <button type="submit">submit</button>
-    </form>
+  <body class="bg-stone-800 text-white">
+    <main class="flex flex-col">
+      <div class="h-14">
+        <p class="p-3 text-xl font-bold text-center">
+          Caffeine Blues
+        </p>
+        {{ template "newBrew" . }}
+      </div>
+      <div id="brews" class="flex-1">
+        {{ template "brew" . }}
+      </div>
+    </main>
   </body>
 </html>

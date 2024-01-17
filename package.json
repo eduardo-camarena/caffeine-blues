@@ -1,0 +1,21 @@
+{
+  "name": "caffeineblues",
+  "version": "1.0.0",
+  "description": "coffee brew tracker",
+  "author": "Eduardo Camarena",
+  "license": "MIT",
+  "scripts": {
+    "start": "tailwindcss -i ./web/static/index.css -o ./web/static/style.css --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eduardo-camarena/caffeineBlues.git"
+  },
+  "bugs": {
+    "url": "https://github.com/eduardo-camarena/caffeineBlues/issues"
+  },
+  "homepage": "https://github.com/eduardo-camarena/caffeineBlues#readme",
+  "dependencies": {
+    "tailwindcss": "^3.4.1"
+  }
+}

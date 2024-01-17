@@ -1,0 +1,33 @@
+{{ define "brew" }}
+  {{ range .Brews }}
+  {{ block "singleBrew" . }}
+    <div class="border-b border-solid border-stone-700">
+      <div class="my-4 flex flex-col justify-center text-center">
+        <h1 class="text-lg text-white font-bold pb-4"> Brew Title </h1>
+
+        <!--Brew Information-->
+        <div class="flex text-gray-300 pb-2">
+          <div class="flex-1 flex flex-col justify-center">
+            <p class="text-gray-100 font-semibold">Method</p>
+            <p>{{ .BrewMethod }}</p>
+          </div>
+          <div class="flex-1 flex flex-col justify-center">
+            <p class="text-gray-100 font-semibold">Brewing time</p>
+            <p>{{ .BrewTime }}</p>
+          </div>
+        </div>
+        <div class="flex text-gray-300">
+          <div class="flex-1 flex flex-col justify-center">
+            <p class="text-gray-100 font-semibold">Coffee In</p>
+            <p>{{ .CoffeeIn }}g</p>
+          </div>
+          <div class="flex-1 flex flex-col justify-center">
+            <p class="text-gray-100 font-semibold">Coffee Out</p>
+            <p>{{ .CoffeeOut }}ml</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  {{ end }}
+  {{ end }}
+{{ end }}

@@ -11,8 +11,7 @@ import (
 func main() {
 	router := routes.NewRouter()
 
-	port := 8080
-	addr := fmt.Sprintf(":%d", port)
+	addr := fmt.Sprintf(":%d", 8080)
 	fmt.Printf("Server listening on http://localhost%s\n", addr)
 	log.Fatal(http.ListenAndServe(addr, router))
 }
