@@ -20,7 +20,9 @@ func NewRouter() http.Handler {
 	return mux
 }
 
-func useBaseHtml(f func(w http.ResponseWriter, r *http.Request, htmlTemplates []string)) func(w http.ResponseWriter, r *http.Request) {
+func useBaseHtml(
+	f func(w http.ResponseWriter, r *http.Request, htmlTemplates []string),
+) func(w http.ResponseWriter, r *http.Request) {
 	return func(w http.ResponseWriter, r *http.Request) {
 		var htmlTemplates []string
 		_, ok := r.Header["Hx-Request"]
